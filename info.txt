@@ -1,0 +1,2 @@
+to add a library using {uv add __________}
+to remove a library using {uv uninstall __________}
