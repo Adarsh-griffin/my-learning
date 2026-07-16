@@ -1,0 +1,6 @@
+uv init github-ai-assistant
+
+uv venv
+uv add langchain ,uv add langchain-groq ,uv add python-dotenv
+
+uv run python main.py

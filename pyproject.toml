@@ -14,3 +14,9 @@ dependencies = [
     "openai>=2.45.0",
     "python-dotenv>=1.2.2",
 ]
+
+[tool.uv.workspace]
+members = [
+    "updatedlangchain/project/devops-github-assistant",
+    "updatedlangchain/project/github-ai-assistant",
+]
