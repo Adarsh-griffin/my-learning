@@ -1,18 +1,18 @@
-from langchain.chat_models import init_chat_model
-from dotenv import load_dotenv
+from fastapi import FastAPI
 
-from app.config import GROQ_API_KEY
-load_dotenv()
+from app.api.routes import router
 
-
-model = init_chat_model(
-    "llama-3.3-70b-versatile",
-    model_provider="groq",
+app = FastAPI(
+    title="GitHub AI Assistant",
+    version="1.0.0",
 )
 
-response = model.invoke(
-    "Introduce yourself in one sentence."
-)
+app.include_router(router)
 
-print(type(response))
-print(response.content)
+
+@app.get("/")
+def root():
+
+    return {
+        "message": "GitHub AI Assistant API"
+    }
